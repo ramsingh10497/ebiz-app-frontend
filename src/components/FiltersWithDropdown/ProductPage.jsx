@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-
 import Container from '../Container'
 import SortBySelectBox from './components/SortBySelectBox/SortBySelectBox'
 import Product from '../MinimallyDesigned/MinimallyDesigned'
+import { Link } from '@mui/material'
 
 function FiltersWithDropdown({ products }) {
   const theme = useTheme();
@@ -29,6 +29,12 @@ function FiltersWithDropdown({ products }) {
             Sort by Year
           </Typography>
           <SortBySelectBox setfilteredProducts={setAllProducts} />
+        </Box>
+
+        <Box display="flex" alignItems="center" marginTop={{ xs: 1, md: 0 }}>
+          <Link component="a" href="/form" >
+            Add New Expense
+          </Link>
         </Box>
       </Box>
       <Box borderRadius={2} border={`4px dashed ${theme.palette.divider}`}  >
